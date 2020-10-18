@@ -1,0 +1,129 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="calci.css">
+<script src="j1.js" type="text/javascript">
+  function display(val)
+
+{
+
+                 x=document.getElementById("res").value;
+//alert(x)
+
+                if(val=='+' || val=='-' || val=='*' || val=='/')
+
+                {
+
+                                opr=val;
+                               num1=parseFloat(x);
+//document.getElementById("res").value+=opr;
+                                //alert(opr);
+                                //alert("GG"+num1);
+
+                }
+               
+
+         if(val=='=')
+
+                {
+
+                               
+
+                                                if(opr=='+')
+
+                                                {
+                                                       
+
+                                                 num2=parseFloat(x);
+                                                // alert("jjk"+num2)
+
+
+                                                document.getElementById("res").value=num1+num2;
+                                                }
+                                                else if(opr=='-')
+                                                {
+                                                        num2=parseFloat(x);
+                                                        document.getElementById("res").value=num1-num2;
+                                                }  
+                                                else if(opr=='*')
+                                                {
+                                                        num2=parseFloat(x);
+                                                        document.getElementById("res").value=num1*num2;
+                                                }
+                                                else if(opr=='/')
+                                                {
+                                                        num2=parseFloat(x);
+                                                        document.getElementById("res").value=num1/num2;
+                                                }
+                                                else if(opr=='^')
+                                                {
+                                                     num2=parseFloat(x);
+                                                        document.getElementById("res").value=num1/num2;  
+                                                }
+
+
+
+}
+else
+{
+
+
+                if(isNaN(document.getElementById("res").value))
+                {
+                        document.getElementById("res").value=val;
+                }
+                else
+                {
+                        document.getElementById("res").value+=val;
+                }
+}
+
+}
+
+function clr()
+
+{
+
+document.getElementById("res").value="";
+
+}
+</script>
+</head>
+<body>
+<form name="form2" method="post">
+<table align="center" cellspacing="5" cellpadding="0">
+<tr id="t1"><td colspan="4"><input type="text" id="res" disabled></td></tr>
+<tr>
+<td><input type="button" value="7" onclick="display('7')" name="seven"></td>
+<td><input type="button" value="8" onclick="display('8')" name="eight"></td>
+<td><input type="button" value="9" onclick="display('9')" name="nine"></td>
+<td><input type="button" value="+" onclick="display('+')" name="plus"></td>
+</tr>
+<tr>
+<td><input type="button" value="4" onclick="display('4')" name="four"></td>
+<td><input type="button" value="5" onclick="display('5')" name="five"></td>
+<td><input type="button" value="6" onclick="display('6')" name="six"></td>
+<td><input type="button" value="-" onclick="display('-')" name="minus"></td>
+</tr>
+<tr>
+<td><input type="button" value="1" onclick="display('1')" name="one"></td>
+<td><input type="button" value="2" onclick="display('2')" name="two"></td>
+<td><input type="button" value="3" onclick="display('3')" name="three"></td>
+<td><input type="button" value="*" onclick="display('*')" name="product"></td>
+</tr>
+<tr>
+<td><input type="button" value="0" onclick="display('0')" name="zero"></td>
+<td><input type="button" value="." onclick="display('.')" name="point"></td>
+<td><input type="button" value="/" onclick="display('/')" name="divide"></td>
+<td rowspan="2"><input type="button" id="equals" value="=" onclick="display('=')" ></td>
+</tr>
+<tr><td><input type="button" value="C" onclick="clr()"></td>
+<td><input type="button" value="(" onclick="display('(')"></td>
+<td><input type="button" value=")" onclick="display(')')"></td>
+</tr>
+</table>
+</form>
+</body>
+</html>
+
+
+

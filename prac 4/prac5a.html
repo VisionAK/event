@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="5.css">
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+function dis(arg)
+{
+if(arg!='=')
+{
+document.getElementById("ip1").value +=arg;
+}
+}
+function clr()
+         {
+             document.getElementById("ip1").value = ""
+         }
+          function solve()
+         {
+             let x = document.getElementById("ip1").value
+             let y = eval(x)
+             document.getElementById("ip1").value = y
+         }
+
+
+          var op=null;
+          var rr;
+           var ak=-1;
+          var opp;
+          var a;
+          var num1;
+          var num2=0;  
+          var flag=0;
+         function r(arg)
+         {
+
+          let x=document.getElementById(arg).value ;
+          if(x!="+/-")
+          {
+            dis(x);  
+          }
+          
+          //alert("heloo");
+         
+          
+          var res=0;
+
+          if(x==1 || x==2 || x==3 || x==4 || x==5 || x==6 || x==7 || x==8 || x==9 || x==0 )
+          {
+          	alert("number");
+          	a=parseFloat(x);
+          	alert(a);
+
+            if(flag==0 && opp=="." )
+            {
+
+
+            if(opp=="." && op==null)
+            {
+              
+              res=parseFloat(num1+"."+parseFloat(a));
+              
+              document.getElementById("ip1").value=res;
+              
+              
+              alert(res);
+              num1=res;
+              
+              flag=1;
+              return;
+            }/*
+            if(opp=="." && op!=null)
+            {
+              
+              res=parseFloat(num2+"."+parseFloat(a));
+              
+              document.getElementById("ip1").value=res;
+              
+              
+              alert(res);
+              num2=res;
+              
+              flag=1;
+              return;
+            }
+*/
+            }
+            if(flag==1 && opp=="." )
+            {
+              if(op==null)
+              {
+              //num2=parseFloat(a);
+              res=parseFloat(document.getElementById("ip1").value);
+              alert(res);
+              document.getElementById("ip1").value=res;
+              
+              
+              alert(res);
+              num1=res;
+              }
+  /*            if(op!=null)
+              {
+                res=parseFloat(document.getElementById("ip1").value);
+                alert(res);
+                document.getElementById("ip1").value=res;
+                 alert(res);
+                  num2=res;
+              }
+    */          
+            }
+          }
+        
+          //alert(a);
+
+          if(x=="+" || x=="-" || x=="*" || x=="/" || x=="."  )
+          {
+          	
+            alert("operator");
+            
+            if(x==".")
+            {
+              opp=x;
+              num1=a;
+            }
+
+            else
+            {
+              op=x;
+            
+          	
+          	//num1=a;
+          	//alert(a);
+            if(opp=".")
+            {
+
+            }
+            else
+            {
+                num1=parseFloat(a);
+                alert(num1);
+               
+                alert(op);
+
+            }
+          	
+          	alert(num1);
+          }
+          }
+          
+
+
+         
+          if(x=="=")
+          {
+          	alert("equals");
+            
+          	num2=parseFloat(a);
+            
+          	switch(op)
+          	{
+          	case "+":
+         
+          				res=num1+num2;
+          				break;
+          	case "-":
+         
+          				res=num1-num2;
+          				break;
+          	case "*":
+         
+          				res=num1*num2;
+          				break;
+          	case "/":
+         
+          				res=num1/num2;
+          				break;
+            
+
+
+
+          	default:
+
+
+          	}
+         
+          	document.getElementById("ip1").value=res;
+            alert(res);
+            a=res;
+          }
+
+
+         }
+
+
+</script>
+
+
+
+
+<div id="d0">
+<br>
+<div id="d1">
+<div id="d12">
+<input id="ip1" class="result" type="text" name="result">
+</div>
+<div id="d13">
+
+<input id="i7" class="7" type="submit"  onclick="r('i7')" name="7" value="7">
+<input id="i8" class="8" type="submit"  onclick="r('i8')" name="8"  value="8">
+<input id="i9" class="9" type="submit"  onclick="r('i9')" name="9" value="9">
+<input id="iplus" class="+" type="submit"  onclick=" r('iplus')" name="+" value="+">
+<br>
+<input id="i4" class="4" type="submit"  onclick=" r('i4')" name="4" value="4">
+<input id="i5" class="5" type="submit"  onclick=" r('i5')" name="5" value="5">
+<input id="i6" class="6" type="submit"  onclick=" r('i6')" name="6" value="6">
+<input id="iminus" class="-" type="submit"  onclick=" r('iminus')" name="-" value="-">
+<br>
+<input id="i1" class="1" type="submit"  onclick=" r('i1')" name="1" value="1">
+<input id="i2" class="2" type="submit"  onclick=" r('i2')" name="2" value="2">
+<input id="i3" class="3" type="submit"  onclick=" r('i3')" name="3" value="3">
+<input id="imul" class="*" type="submit"  onclick=" r('imul')" name="*" value="*">
+<br>
+<input id="i0" class="0" type="submit"  onclick=" r('i0')" name="0" value="0">
+<input id="idot" class="." type="submit"  onclick=" r('idot')" name="." value=".">
+<input id="idiv" class="/" type="submit"  onclick=" r('idiv')" name="/" value="/">
+<input id="ieq" class="=" type="submit"  onclick=" r('ieq')" name="=" value="=">
+<br>
+<input type="submit" id="iplusminus" class="+/-"  onclick=" r('iplusminus')" name="+/-" value="+/-" align="center">
+<input type="submit" id="clear" class="clear"  onclick="clr()" name="clear" value="C" align="center">
+</div>
+
+</div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
