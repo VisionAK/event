@@ -1,0 +1,36 @@
+<html>
+<body>
+
+<p>Click the button .</p>
+
+<button onclick="myFunction()">press</button>
+
+
+
+<script>
+function myFunction() {
+  var s = prompt("Please enter String");
+  var i=0;
+  var n;
+
+  if (s != null) {
+  	
+     var str=s;
+      //alert(s);
+       var splitString = str.split(""); 
+   
+    var reverseArray = splitString.reverse();
+    str=reverseArray.join("");
+    //alert(reverseArray);
+    alert(str);
+   		
+   				
+   			
+   		}
+
+     
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<html>
+<body>
+<h1>BUBBLE SORT</h1><br>
+input:<input id="p1" type="text" name="t1" \>
+output:<input id="p11" type="text" name="t1" \>
+
+<button onclick="sort()">SORT</button>
+
+
+
+<script>
+function sort()
+{
+	var a=[1,2,3,56,45,23,12];
+	
+	var i=0;
+	for (i = 0; i<a.length; i++)
+	{
+		//alert(a[i]);
+		document.getElementById("p1").value +=a[i]+" ";
+		
+	}
+	 
+	a=bubble_Sort(a);
+	for (i = 0; i<a.length; i++)
+	{
+		//alert(a[i]);
+		document.getElementById("p11").value +=a[i]+" ";
+		
+	}
+}
+function swap(arr, first_Index, second_Index){
+    var temp = arr[first_Index];
+    arr[first_Index] = arr[second_Index]; 
+    arr[second_Index] = temp;
+}
+
+function bubble_Sort(arr){
+
+    var len = arr.length,
+        i, j, stop;
+
+    for (i=0; i < len; i++){
+        for (j=0, stop=len-i; j < stop; j++){
+            if (arr[j] > arr[j+1]){
+                swap(arr, j, j+1);
+            }
+        }
+    }
+
+    return arr;
+}
+
+
+</script>
+
+</body>
+</html>
